@@ -42,7 +42,7 @@ export class Autoresize implements AfterViewInit, OnChanges {
   }
 
   autoresize(): void {
-    if (!this.$textArea || !this.maxHeight) {
+    if (!this.$textArea) {
       return;
     }
     const paddingToSubtract =
@@ -50,8 +50,8 @@ export class Autoresize implements AfterViewInit, OnChanges {
       parseInt(window.getComputedStyle(this.$textArea, null).paddingBottom, 10);
 
     if (
-      this.$textArea.clientHeight - paddingToSubtract > this.maxHeight ||
-      this.$textArea.scrollHeight - paddingToSubtract > this.maxHeight
+      this.maxHeight &&
+      (this.$textArea.clientHeight - paddingToSubtract > this.maxHeight || this.$textArea.scrollHeight - paddingToSubtract > this.maxHeight)
     ) {
       this.$textArea.style.overflow = 'auto';
       this.$textArea.style.height = this.maxHeight + 'px';
