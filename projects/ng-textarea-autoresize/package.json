@@ -1,6 +1,22 @@
 {
-  "name": "ng-textarea-autoresize",
+  "name": "@danielzotti/ng-textarea-autoresize",
   "version": "0.0.1",
+  "keywords": [
+    "angular",
+    "textarea",
+    "autoresize",
+    "form",
+    "input form",
+    "text",
+    "angular8",
+    "themable",
+    "customizable"
+  ],
+  "description": "It's a special angular directive that autoresize a textarea",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danielzotti/ng-textarea-autoresize"
+  },
   "peerDependencies": {
     "@angular/common": "^8.1.2",
     "@angular/core": "^8.1.2"
