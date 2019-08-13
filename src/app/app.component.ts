@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   text = 'This is a test!';
+  htmlText = '<textarea [autoresize]="text" name="text" [(ngModel)]="text" autoresizeMaxHeight="300"></textarea>';
 }

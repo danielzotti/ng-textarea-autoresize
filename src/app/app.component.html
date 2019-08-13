@@ -1,4 +1,15 @@
 <h2>Here is the library: </h2>
-<textarea [autoresize]="text" name="text" [(ngModel)]="text" autoresizeMaxHeight="300"></textarea>
-<textarea [autoresize]="text" name="text2" autoresizeMaxHeight="200"></textarea>
-<textarea autoresize autoresizeMaxHeight="120"></textarea>
+
+<pre>{{htmlText}}</pre>
+
+<h1>No options</h1>
+<textarea autoresize style="padding:0"></textarea>
+
+<h1>ngModel / maxHeight</h1>
+<textarea [autoresize]="text" name="text" [(ngModel)]="text" autoresizeMaxHeight="300" style="padding:10px"></textarea>
+
+<h1>variable / maxHeight</h1>
+<textarea [autoresize]="text" name="text2" autoresizeMaxHeight="200" style="padding:20px"></textarea>
+
+<h1>No options/ maxHeight</h1>
+<textarea autoresize autoresizeMaxHeight="120" style="padding:50px"></textarea>

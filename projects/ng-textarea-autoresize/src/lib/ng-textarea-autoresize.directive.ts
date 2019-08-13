@@ -58,7 +58,7 @@ export class Autoresize implements AfterViewInit, OnChanges {
     } else {
       this.$textArea.style.overflow = 'hidden';
       this.$textArea.style.height = 'auto';
-      this.$textArea.style.height = this.$textArea.scrollHeight + 'px';
+      this.$textArea.style.height = this.$textArea.scrollHeight - paddingToSubtract + 'px';
     }
   }
 }
