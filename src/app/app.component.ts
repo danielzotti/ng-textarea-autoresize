@@ -6,6 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  text = 'This is a test!';
-  htmlText = '<textarea [autoresize]="text" name="text" [(ngModel)]="text" autoresizeMaxHeight="300"></textarea>';
+  textLong =
+    'This text is written in a component variable\nThis text is written in a component variable\nThis text is written in a component variable\nThis text is written in a component variable\nThis text is written in a component variable\nThis text is written in a component variable\nThis text is written in a component variable\nThis text is written in a component variable\nThis text is written in a component variable\nThis text is written in a component variable\nThis text is written in a component variable\nThis text is written in a component variable\nThis text is written in a component variable.';
+  textShort = 'TEST';
+
+  maxHeight = 150;
+  text = this.textLong;
 }

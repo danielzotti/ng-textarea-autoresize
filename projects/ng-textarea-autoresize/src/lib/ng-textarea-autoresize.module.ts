@@ -1,10 +1,10 @@
-import { Autoresize } from './ng-textarea-autoresize.directive';
+import { AutoresizeDirective } from './ng-textarea-autoresize.directive';
 import { NgModule } from '@angular/core';
 
 @NgModule({
-  declarations: [Autoresize],
+  declarations: [AutoresizeDirective],
   imports: [],
-  exports: [Autoresize],
+  exports: [AutoresizeDirective],
   providers: []
 })
 export class NgTextareaAutoresizeModule {}

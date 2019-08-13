@@ -1,1 +1,95 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Exo:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,400i,700,700i&display=swap");
+
+$font-family: "Exo";
+$font-family-code: "Ubuntu Mono";
+
+$margin-default: 15px !default;
+$margin-small: $margin-default / 3 !default;
+$margin-medium: $margin-default * 2 !default;
+$margin-big: $margin-default * 4 !default;
+
+$gray-light: #efefef;
+$gray: #ccc;
+
+$border-radius: 4px;
+
+// COMMON
+html {
+  font-family: $font-family;
+}
+* {
+  box-sizing: border-box;
+}
+
+pre,
+textarea,
+div[contenteditable] {
+  font-family: $font-family-code;
+  width: 100%;
+  border-radius: $border-radius;
+  border: 1px solid $gray;
+  padding: $margin-default;
+}
+.title {
+  text-align: center;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+button {
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 5px 10px;
+  background-color: white;
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+// APP
+.title {
+  text-align: center;
+}
+
+.example {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: $border-radius;
+  @media (max-width: 400px) {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+.example__title {
+  margin-top: 0;
+}
+
+.example__item {
+  margin-top: $margin-medium;
+  margin-bottom: $margin-medium;
+}
+.example__how-to {
+  font-family: $font-family-code;
+  margin-top: $margin-medium;
+  margin-bottom: $margin-medium;
+  background-color: $gray-light;
+  padding: 20px;
+  border-radius: $border-radius;
+  overflow: auto;
+}
+
+.example__code {
+  margin-top: $margin-medium;
+  margin-bottom: $margin-medium;
+}
+.example__variable {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
