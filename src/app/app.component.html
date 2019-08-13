@@ -1,6 +1,13 @@
 <h1 class="title">@danielzotti/ng-textarea-autoresize</h1>
 
 <div class="container">
+  <p>
+    It works with <i>&lt;textarea&gt;</i> and it auto-resizes its height on:
+  </p>
+  <ul>
+    <li>model change</li>
+    <li>resize</li>
+  </ul>
 
   <!-- SIMPLE TEAXTAREA / CONTENTEDITABLE -->
   <div class="example">
@@ -10,20 +17,12 @@
     <div class="example__item">
       <pre class="example__how-to">&lt;textarea <b><i>autoresize</i></b>&gt;&lt;&#47;textarea&gt;</pre>
       <div class="example__code">
+        <label>normal</label>
         <textarea autoresize placeholder="Try typing something"></textarea>
+        <label>big padding</label>
         <textarea autoresize placeholder="Try typing something (big padding)" style="padding:50px"></textarea>
+        <label>small padding</label>
         <textarea autoresize placeholder="Try typing something (no padding)" style="padding:0"></textarea>
-      </div>
-    </div>
-
-    <hr>
-
-    <!-- contenteditable -->
-    <div class="example__item">
-      <pre
-           class="example__how-to">&lt;div <i>contenteditable</i>&nbsp;<b><i>autoresize</i></b>&gt;&lt;&#47;div&gt;</pre>
-      <div class="example__code">
-        <div contenteditable autoresize>Try edit this content...</div>
       </div>
     </div>
 
@@ -65,14 +64,10 @@
     <hr>
 
     <div class="example__item">
-      <pre class="example__how-to">&lt;form #form="ngForm"&gt;
-    &lt;textarea <b><i>[autoresize]="text"</i></b>&nbsp;<b><i>[(ngModel)]="text"</i></b>&nbsp;name="text" <b><i>[autoresizeMaxHeight]="maxHeight"</i></b>&gt;&lt;&#47;textarea&gt;
-&lt;&#47;form&gt;</pre>
+      <pre
+           class="example__how-to">&lt;textarea <b><i>[autoresize]="text"</i></b>&nbsp;<b><i>[autoresizeMaxHeight]="maxHeight"</i></b>&nbsp;<b><i>[(ngModel)]="text"</i></b>&gt;&lt;&#47;textarea&gt;</pre>
       <div class="example__code">
-        <form #form="ngForm">
-          <!-- <textarea name="text" [(ngModel)]="text" autoresize [autoresizeMaxHeight]="maxHeight"></textarea> -->
-          <textarea name="text" [(ngModel)]="text" [autoresize]="text" [autoresizeMaxHeight]="maxHeight"></textarea>
-        </form>
+        <textarea [(ngModel)]="text" [autoresize]="text" [autoresizeMaxHeight]="maxHeight"></textarea>
       </div>
     </div>
 
