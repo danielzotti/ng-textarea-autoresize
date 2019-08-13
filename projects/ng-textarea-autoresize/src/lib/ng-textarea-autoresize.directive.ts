@@ -4,11 +4,11 @@ import { ElementRef, HostListener, Directive, Input, AfterViewInit, OnChanges, S
   selector: '[autoresize]'
 })
 export class AutoresizeDirective implements AfterViewInit, OnChanges {
+  @Input('autoresize')
+  value: string;
+
   @Input('autoresizeMaxHeight')
   maxHeight: number;
-
-  @Input('ngModel')
-  private value: string;
 
   private $textArea: HTMLTextAreaElement;
 

@@ -8,9 +8,11 @@
 
     <!-- textarea -->
     <div class="example__item">
-      <pre class="example__how-to">&lt;textarea <b>autoresize</b>&gt;&lt;&#47;textarea&gt;</pre>
+      <pre class="example__how-to">&lt;textarea <b><i>autoresize</i></b>&gt;&lt;&#47;textarea&gt;</pre>
       <div class="example__code">
         <textarea autoresize placeholder="Try typing something"></textarea>
+        <textarea autoresize placeholder="Try typing something (big padding)" style="padding:50px"></textarea>
+        <textarea autoresize placeholder="Try typing something (no padding)" style="padding:0"></textarea>
       </div>
     </div>
 
@@ -18,7 +20,8 @@
 
     <!-- contenteditable -->
     <div class="example__item">
-      <pre class="example__how-to">&lt;div <i>contenteditable</i>&nbsp;<b>autoresize</b>&gt;&lt;&#47;div&gt;</pre>
+      <pre
+           class="example__how-to">&lt;div <i>contenteditable</i>&nbsp;<b><i>autoresize</i></b>&gt;&lt;&#47;div&gt;</pre>
       <div class="example__code">
         <div contenteditable autoresize>Try edit this content...</div>
       </div>
@@ -33,43 +36,45 @@
     <!-- TEAXTAREA -->
     <div class="example__item">
       <pre
-           class="example__how-to">&lt;textarea <b>autoresize</b>&nbsp;<b><i>autoresizeMaxHeight="150"</i></b>&gt;&lt;&#47;textarea&gt;</pre>
+           class="example__how-to">&lt;textarea <b><i>autoresize</i></b>&nbsp;<b><i>autoresizeMaxHeight="150"</i></b>&gt;&lt;&#47;textarea&gt;</pre>
       <div class="example__code">
         <textarea autoresize placeholder="Try typing something" autoresizeMaxHeight="150"></textarea>
       </div>
     </div>
   </div>
 
-  <!-- NG MODEL -->
+  <!-- CONNECTION WITH MODEL -->
   <div class="example">
-    <h2 class="example__title">ngModel</h2>
+    <h2 class="example__title">connection with model</h2>
+    <div>
+      <button (click)="text = textShort">set short text</button>
+      <button (click)="text = textLong">set very long text</button>
+      <button (click)="maxHeight = 80">set maxHeight = 80</button>
+      <button (click)="maxHeight = 200">set maxHeight = 200</button>
+      <p class="example__variable">maxHeight: <b>{{maxHeight}}</b></p>
+      <p class="example__variable">text: <b>{{text | json}}</b></p>
+    </div>
+    <div class="example__item">
+      <pre
+           class="example__how-to">&lt;textarea <b><i>[autoresize]="text"</i></b>&nbsp;<b><i>[autoresizeMaxHeight]="maxHeight"</i></b>&gt;&lt;&#47;textarea&gt;</pre>
+      <div class="example__code">
+        <textarea disabled [autoresize]="text" [autoresizeMaxHeight]="maxHeight">{{text}}</textarea>
+      </div>
+    </div>
+
+    <hr>
 
     <div class="example__item">
       <pre class="example__how-to">&lt;form #form="ngForm"&gt;
-    &lt;textarea <b>autoresize</b>&nbsp;<b><i>[(ngModel)]="text"</i></b>&nbsp;name="text" <b><i>[autoresizeMaxHeight]="maxHeight"</i></b>&gt;&lt;&#47;textarea&gt;
+    &lt;textarea <b><i>[autoresize]="text"</i></b>&nbsp;<b><i>[(ngModel)]="text"</i></b>&nbsp;name="text" <b><i>[autoresizeMaxHeight]="maxHeight"</i></b>&gt;&lt;&#47;textarea&gt;
 &lt;&#47;form&gt;</pre>
       <div class="example__code">
         <form #form="ngForm">
           <!-- <textarea name="text" [(ngModel)]="text" autoresize [autoresizeMaxHeight]="maxHeight"></textarea> -->
-          <textarea name="text" [(ngModel)]="text" autoresize [autoresizeMaxHeight]="maxHeight"></textarea>
+          <textarea name="text" [(ngModel)]="text" [autoresize]="text" [autoresizeMaxHeight]="maxHeight"></textarea>
         </form>
-        <button (click)="text = textShort">set short text</button>
-        <button (click)="text = textLong">set very long text</button>
-        <button (click)="maxHeight = 80">set maxHeight = 80</button>
-        <button (click)="maxHeight = 200">set maxHeight = 200</button>
-        <p class="example__variable">maxHeight: <b>{{maxHeight}}</b></p>
-        <p class="example__variable">text: <b>{{form.value.text | json}}</b></p>
       </div>
     </div>
+
   </div>
-
-
 </div>
-
-
-
-<!-- <h1>ngModel / maxHeight</h1>
-<textarea [autoresize]="text" name="text" [(ngModel)]="text" autoresizeMaxHeight="300" style="padding:10px"></textarea>
-
-<h1>variable / maxHeight</h1>
-<textarea [autoresize]="text" name="text2" autoresizeMaxHeight="200" style="padding:20px"></textarea> -->
