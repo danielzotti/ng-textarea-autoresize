@@ -7,6 +7,8 @@ Autoresize is triggered on:
 - model change
 - window resize
 
+## Get started
+
 - [Live demo](https://danielzotti.github.io/ng-textarea-autoresize)
 
 - [NPM](https://www.npmjs.com/package/@danielzotti/ng-textarea-autoresize)
