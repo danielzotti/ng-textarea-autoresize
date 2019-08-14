@@ -1,27 +1,85 @@
-# NgTextareaAutoresize
+# @danielzotti/ng-textarea-autoresize
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.1.
+It's a special angular directive that autoresize a textarea based on the content.
+Autoresize is triggered on:
 
-## Development server
+- textarea content change
+- model change
+- window resize
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- [Live demo](https://danielzotti.github.io/ng-textarea-autoresize)
 
-## Code scaffolding
+- [NPM](https://www.npmjs.com/package/@danielzotti/ng-textarea-autoresize)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Try it yourself:
+  - Run `npm install`
+  - Run `npm run start` for a dev server
+  - Navigate to `http://localhost:4200/`
 
-## Build
+## How to use it
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Install the package
 
-## Running unit tests
+Run `npm i @danielzotti/ng-textarea-autoresize --save`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Import the module
 
-## Running end-to-end tests
+Import `NgTextareaAutoresizeModule` from `@danielzotti/ng-textarea-autoresize` in `app.module.ts`
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```typescript
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
-## Further help
+import { NgTextareaAutoresizeModule } from "@danielzotti/ng-textarea-autoresize";
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+import { AppComponent } from "./app.component";
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule, NgFilemanagerModule],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+```
+
+### Use it in a component
+
+#### Basic template
+
+- Easy to use
+
+```html
+<textarea autoresize></textarea>
+```
+
+#### Max height
+
+- Set max height in pixels on `autoresizeMaxHeight` attribute
+
+```html
+<textarea autoresize autoresizeMaxHeight="150"></textarea>
+```
+
+#### Bind to model
+
+- Bind textarea content to a variable on `autoresize` attribute
+- Bind textarea max height to a variable on `autoresizeMaxHeight` attribute
+
+```html
+<textarea [autoresize]="text" [autoresizeMaxHeight]="maxHeight"></textarea>
+```
+
+```typescript
+import { Component } from "@angular/core";
+
+@Component({
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"]
+})
+export class AppComponent {
+  maxHeight = 150; // pixels
+  text = "This is the text for the textarea!";
+}
+```
